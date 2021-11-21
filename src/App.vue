@@ -1,58 +1,8 @@
 <template>
-  <v-app>
+  <v-app class="app-wrapper">
 
-     <v-app-bar dark>
-        <v-img height="100%" contain position="left center" :src="logo"></v-img>
-        <v-spacer></v-spacer>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        
-        <!-- <v-toolbar-title>My files</v-toolbar-title> -->
-  
-       
-  
-      </v-app-bar>
-
-      <v-navigation-drawer
-        v-model="drawer"
-        absolute
-        right
-        temporary
-      >
-        <v-list
-          nav
-        >
-        <v-btn
-            icon
-            @click.stop="drawer = !drawer"
-            right
-            absolute
-        >
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-
-          <v-list-item-group
-            v-model="group"
-            active-class="deep-purple--text text--accent-4"
-          >
-            <v-list-item>
-              <v-list-item-title>Foo</v-list-item-title>
-            </v-list-item>
-  
-            <v-list-item>
-              <v-list-item-title>Bar</v-list-item-title>
-            </v-list-item>
-  
-            <v-list-item>
-              <v-list-item-title>Fizz</v-list-item-title>
-            </v-list-item>
-  
-            <v-list-item>
-              <v-list-item-title>Buzz</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
-
+  <AppBarMobile class="d-flex d-sm-none"/>
+  <AppBarDesktop class="d-none d-sm-flex"/>
 
     <v-main>
       <router-view/>
@@ -63,23 +13,26 @@
 
 <script>
 
+import AppBarMobile from '@/components/AppBarMobile'
+import AppBarDesktop from '@/components/AppBarDesktop'
+
 export default {
   name: 'App',
-
-  data: () => ({
-    drawer: false,
-    group: null,
-    logo: require("./assets/space-logo.svg"),
-  }),
-  watch:{
-    group () {
-      this.drawer = false
-    },
-  }
+  components:{AppBarMobile,AppBarDesktop},
 };
 </script>
 
 <style lang="scss">
 
+.v-application--wrap{ //waarom deze selector en niet gewoon v-app?
+  background-image: url("./assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  @media(min-width: 600px){
+    background-image: url("./assets/home/background-home-tablet.jpg");
+  }
+  @media(min-width: 960px){
+    background-image: url("./assets/home/background-home-desktop.jpg");
+  }
+}
 
 </style>
