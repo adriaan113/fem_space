@@ -24,15 +24,25 @@
     components: {
       // HelloWorld,
     },
+    mounted(){
+      const home= document.querySelector('.v-application--wrap');
+      home.classList.add('home');
+      home.classList.remove('destination');
+    }, 
   }
 </script>
 
 <style lang="scss">
 
+@import '../assets/global.scss';
+
 .home-wrapper{
   height: calc(100vh - 50px);
   .card{
     background: transparent !important;
+  }
+  .rounded-circle{
+    background: white !important;
   }
 }
 </style>

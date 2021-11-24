@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="d-flex flex-column align-center">
         <!-- menu -->
         <v-tabs centered dark v-model="tab" background-color="rgba(0,0,0,0)">
             <v-tab v-for="(planet, i) of planets" :key="i">{{planet.name}}</v-tab>
@@ -10,20 +10,20 @@
             v-for="(planet,i) of planets"
             :key="i"
             >
-                <v-card flat>
-                    <v-img height="100" :src="require(`@/assets/destination/image-${planet.name.toLowerCase()}.webp`)"></v-img>
-                    <v-card-title>{{planet.name}}</v-card-title>
-                    <v-card-text v-text="planet.description"></v-card-text>
+                <v-card dark flat background-color="rgba(0,0,0,0)" class="d-flex flex-column align-center">
+                    <v-img max-width="250" contain class="planet-img" :src="require(`@/assets/destination/image-${planet.name.toLowerCase()}.webp`)"></v-img>
+                    <v-card-title class="text-h2 font-weight-light text-uppercase">{{planet.name}}</v-card-title>
+                    <v-card-text class="text-center" v-text="planet.description"></v-card-text>
+                    <v-divider dark class="divider mt-3 mb-3"></v-divider>
+
+                    <v-card-subtitle class="text-uppercase">avg. distance</v-card-subtitle>
+                    <v-card-text class="text-h5 text-center white--text text-uppercase" v-text="planet.distance"></v-card-text>
+
+                    <v-card-subtitle class="text-uppercase">est. travel time</v-card-subtitle>
+                    <v-card-text class="text-h5 text-center white--text text-uppercase" v-text="planet.travel"></v-card-text>
                 </v-card>
-
-                <!-- require('@/assets/destination/image-moon.webp') -->
-
             </v-tab-item>
         </v-tabs-items>
-
-        <!-- <h1>{{planets[0].name}}</h1>
-        <img :src="moon"> -->
-
     </section>
 </template>
 
@@ -45,16 +45,36 @@ export default {
     methods:{
     },
     mounted(){
-      
-
-        console.log(this.data);
-        console.log(this.test);
-
-        
-    }
+        const des= document.querySelector('.v-application--wrap');
+        des.classList.add('destination'); 
+        des.classList.remove('home');
+    },
 }
 </script>
 
 <style lang="scss">
 
+@import '../assets/global.scss';
+
+    .v-card{
+        // height: 100vh;
+        background: transparent !important;
+    }
+
+
+    .theme--light.v-tabs-items{
+        background: transparent;
+    }
+
+    .theme--dark.v-divider{
+        border-color: white !important;
+        border-width: thin 0 0 0;
+        width: 80%;
+    }
+
+    // .planet-img{
+    //     position: absolute;
+    //     top:0;
+    //     left:0;
+    // }
 </style>
