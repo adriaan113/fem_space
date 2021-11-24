@@ -2,7 +2,9 @@
     <nav>
         <v-app-bar flat app dark class="app-bar-color">
             <v-app-bar-title>
-                <v-img :src="logo" height="50" contain class="mt-2"></v-img>
+                <router-link to="/">
+                    <v-img :src="logo" height="50" contain class="mt-2"></v-img>
+                </router-link>  
             </v-app-bar-title>
             <v-spacer></v-spacer>
             <v-app-bar-nav-icon class="mr-1" @click="drawer = !drawer"></v-app-bar-nav-icon>

@@ -1,7 +1,7 @@
 <template>
-    <section class="d-flex flex-column align-center">
+    <section class="d-flex flex-column align-center des-wrapper">
         <!-- menu -->
-        <v-tabs centered dark v-model="tab" background-color="rgba(0,0,0,0)">
+        <v-tabs centered dark v-model="tab" background-color="rgba(0,0,0,0)" class="mt-4">
             <v-tab v-for="(planet, i) of planets" :key="i">{{planet.name}}</v-tab>
         </v-tabs>
 
@@ -11,7 +11,7 @@
             :key="i"
             >
                 <v-card dark flat background-color="rgba(0,0,0,0)" class="d-flex flex-column align-center">
-                    <v-img max-width="250" contain class="planet-img" :src="require(`@/assets/destination/image-${planet.name.toLowerCase()}.webp`)"></v-img>
+                    <v-img max-width="200" contain class="planet-img mt-5" :src="require(`@/assets/destination/image-${planet.name.toLowerCase()}.webp`)"></v-img>
                     <v-card-title class="text-h2 font-weight-light text-uppercase">{{planet.name}}</v-card-title>
                     <v-card-text class="text-center" v-text="planet.description"></v-card-text>
                     <v-divider dark class="divider mt-3 mb-3"></v-divider>
@@ -57,8 +57,11 @@ export default {
 @import '../assets/global.scss';
 
     .v-card{
-        // height: 100vh;
         background: transparent !important;
+    }
+
+    .des-wrapper{
+        height: calc(100vh - 50px);
     }
 
 
