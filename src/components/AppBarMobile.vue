@@ -12,13 +12,13 @@
 
         <v-navigation-drawer v-model="drawer" app right dark class="custom-drawer-style">
             <v-btn
-            icon
+            icon x-large
             @click.stop="drawer = !drawer"
-            class="satan mt-2 mb-4"
+            class="satan mt-2"
             >
                 <v-icon>mdi-close</v-icon>
             </v-btn>
-            <v-list>
+            <v-list class="mt-5">
             <!-- <v-list-item
                 v-for="(item, i) in items"
                 :key= "i"
@@ -26,27 +26,27 @@
             >
                 <v-list-item-title class="text-h6 font-weight-light text-uppercase">0{{i}} {{item.title}}</v-list-item-title>
             </v-list-item> -->
-                <v-list-item>
+                <v-list-item class="mb-2">
                     <v-list-item-title>
-                        <router-link to="/">00 HOME</router-link>
+                        <router-link to="/" class="text-decoration-none white--text text-h6 font-weight-light">00 HOME</router-link>
                     </v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
+                <v-list-item class="mb-2">
                     <v-list-item-title>
-                        <router-link to="/destination">01 DESTINATION</router-link>
+                        <router-link to="/destination" class="text-decoration-none white--text text-h6 font-weight-light">01 DESTINATION</router-link>
                     </v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
+                <v-list-item class="mb-2">
                     <v-list-item-title>
-                        <router-link to="/crew">02 CREW</router-link>
+                        <router-link to="/crew" class="text-decoration-none white--text text-h6 font-weight-light">02 CREW</router-link>
                     </v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
+                <v-list-item class="mb-2">
                     <v-list-item-title>
-                        <router-link to="/technology">03 TECHNOLOGY</router-link>
+                        <router-link to="/technology" class="text-decoration-none white--text text-h6 font-weight-light">03 TECHNOLOGY</router-link>
                     </v-list-item-title>
                 </v-list-item>
 
@@ -75,7 +75,7 @@ data: () => ({
 
 <style lang="scss">
 .satan{
-    margin-left: 85%;
+    margin-left: 75%;
 }
 
 .app-bar-color{
