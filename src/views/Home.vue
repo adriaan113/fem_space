@@ -27,7 +27,7 @@
     mounted(){
       const home= document.querySelector('.v-application--wrap');
       home.classList.add('home');
-      home.classList.remove('destination');
+      home.classList.remove('destination', 'crew', 'technology');
     }, 
   }
 </script>
@@ -37,7 +37,7 @@
 @import '../assets/global.scss';
 
 .home-wrapper{
-  height: calc(100vh - 50px);
+  height: calc(100vh - 50px); //is dit slim en nodig?
   .card{
     background: transparent !important;
   }

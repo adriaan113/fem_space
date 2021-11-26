@@ -47,12 +47,12 @@ export default {
     mounted(){
         const des= document.querySelector('.v-application--wrap');
         des.classList.add('destination'); 
-        des.classList.remove('home');
+        des.classList.remove('home', 'crew', 'technology');
     },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import '../assets/global.scss';
 
@@ -61,7 +61,8 @@ export default {
     }
 
     .des-wrapper{
-        height: calc(100vh - 50px);
+        // height: calc(100vh - 50px);
+        width: 100%;
     }
 
 
@@ -74,10 +75,4 @@ export default {
         border-width: thin 0 0 0;
         width: 80%;
     }
-
-    // .planet-img{
-    //     position: absolute;
-    //     top:0;
-    //     left:0;
-    // }
 </style>

@@ -24,4 +24,9 @@ export default {
 
 <style lang="scss">
 
+// .app-wrapper{
+//   width: 100%;
+//   height: 100vh;
+// }
+
 </style>
